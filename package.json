@@ -1,0 +1,50 @@
+{
+  "name": "@leocpii/ez-formatter",
+  "version": "1.0.0",
+  "description": "Easy formatter for you",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "test": "mocha -r sucrase/register test/**/*.spec.ts",
+    "test:coverage": "nyc --reporter=lcov --reporter=text-summary npm run test",
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+  },
+  "nyc": {
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "check-coverage": true,
+    "functions": 90,
+    "lines": 90
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeoCpii/ez-formatter.git"
+  },
+  "keywords": [
+    "formatter",
+    "cep",
+    "cpf"
+  ],
+  "author": "Leonardo Gonçalves de Melo <leogoncalves.contato@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LeoCpii/ez-formatter/issues"
+  },
+  "homepage": "https://github.com/LeoCpii/ez-formatter#readme",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
+    "nodemon": "^2.0.7",
+    "nyc": "^15.1.0",
+    "source-map-support": "^0.5.19",
+    "sucrase": "^3.17.0",
+    "ts-node": "^9.1.1"
+  },
+  "dependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1"
+  }
+}

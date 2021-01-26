@@ -2,12 +2,14 @@
   "name": "@leocpii/ez-formatter",
   "version": "1.0.0",
   "description": "Easy formatter for you",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
     "test": "mocha -r sucrase/register test/**/*.spec.ts",
     "test:coverage": "nyc --reporter=lcov --reporter=text-summary npm run test",
-    "build": "sucrase ./src -d ./dist --transforms typescript,imports"
+    "build": "sucrase ./src -d ./dist --transforms typescript,imports",
+    "version": "git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "nyc": {
     "reporter": [
@@ -27,11 +29,17 @@
     "cep",
     "cpf"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "author": "Leonardo Gonçalves de Melo <leogoncalves.contato@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/LeoCpii/ez-formatter/issues"
   },
+  "files": [
+    "dist/**/*"
+  ],
   "homepage": "https://github.com/LeoCpii/ez-formatter#readme",
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",

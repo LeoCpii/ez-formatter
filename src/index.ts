@@ -43,7 +43,7 @@ class ConfigFormats {
     }
 }
 
-class Formatter implements IFormats {
+export class Formatter implements IFormats {
     constructor() { };
 
     private leadingZerosValue(value: number | string, length: number): string {
@@ -133,5 +133,3 @@ class Formatter implements IFormats {
         return this.fn(config, value);
     }
 }
-
-export default new Formatter();

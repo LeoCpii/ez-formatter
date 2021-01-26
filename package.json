@@ -1,12 +1,13 @@
 {
   "name": "@leocpii/ez-formatter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Easy formatter for you",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "dev": "nodemon src/index.ts",
     "test": "mocha -r sucrase/register test/**/*.spec.ts",
+    "start": "node dist/index.js",
     "test:coverage": "nyc --reporter=lcov --reporter=text-summary npm run test",
     "build": "sucrase ./src -d ./dist --transforms typescript,imports",
     "prepare" : "npm run build",
